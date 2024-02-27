@@ -17,11 +17,9 @@ module.exports = {
     extraFileExtensions: ['.vue'], // 提供@typescript-eslint/parser解析 .vue 文件中的<script> 
   },
   plugins: [ 'vue', '@typescript-eslint'],
-  rules: { 
-    'no-console': 1, 
-    'no-debugger': 2, 
-    'no-alert': 2, 
-    'vue/multi-word-component-names': 0, 
-    '@typescript-eslint/no-explicit-any': 0, 
+  rules: {
+    'vue/multi-word-component-names': ['error', {
+      'ignores': ['index'] // 这里可以忽略'index'
+    }],
   }
 };
